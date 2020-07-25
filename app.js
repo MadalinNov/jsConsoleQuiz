@@ -11,15 +11,16 @@
   var authorOfCourse = new Question("Who is the author of this course?", possibleAnswers = ["1: John", "2: Mark", "3: Jonas", "4: Costel"], 3);
   var whatIsCSS = new Question("What does CSS stand for?", possibleAnswers = ["1: Cross Style Syntax", "2: Cascading Style Sheets", "3: Create Something Strange"], 2);
   questions = [jsQuestion, authorOfCourse, whatIsCSS];
-  // random Question Generator
-  var randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+  //Quiz Function
   function actualQuiz(){
     var userScore=0;
     while (inputAnswer !== 0) {
       var quit = 0;
+      //random question
       randomQuestion = questions[Math.floor(Math.random() * questions.length)];
       console.log(randomQuestion.question);
       console.log(randomQuestion.possibleAnswers.join(" "));
+      //answer check + scoring
       inputAnswer = parseInt(prompt(randomQuestion.question + " Your Answer:" + " \n To exit press 0."));
       if (inputAnswer === randomQuestion.correctAnswer) {
         userScore++;
