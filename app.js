@@ -15,7 +15,6 @@
   function actualQuiz(){
     var userScore=0;
     while (inputAnswer !== 0) {
-      var quit = 0;
       //random question
       randomQuestion = questions[Math.floor(Math.random() * questions.length)];
       console.log(randomQuestion.question);
